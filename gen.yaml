@@ -1,10 +1,15 @@
 configVersion: 1.0.0
+management:
+  docChecksum: 18fbb4e494ddd33659615dce0313f089
+  docVersion: "1.0"
+  speakeasyVersion: 1.19.2
+  generationVersion: 2.16.5
 generation:
   telemetryEnabled: false
   sdkClassName: SDK
   sdkFlattening: false
   singleTagPerOp: false
 php:
-  version: ""
+  version: 1.0.0
   namespace: structure\Structure
   packageName: structure/structure
