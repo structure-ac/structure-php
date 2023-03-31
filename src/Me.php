@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 class Me 
 {
@@ -40,10 +40,10 @@ class Me
     /**
      * Show current user
      * 
-     * @return \structure\Structure\Models\Operations\MeResponse
+     * @return \structure\structure\Models\Operations\MeResponse
      */
 	public function me(
-    ): \structure\Structure\Models\Operations\MeResponse
+    ): \structure\structure\Models\Operations\MeResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/me');
@@ -54,7 +54,7 @@ class Me
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\MeResponse();
+        $response = new \structure\structure\Models\Operations\MeResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

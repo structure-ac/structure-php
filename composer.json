@@ -1,9 +1,9 @@
 {
-  "name": "structure/structure",
+  "name": "structure/Structure",
   "type": "library",
   "autoload": {
     "psr-4": {
-      "structure\\Structure\\": "src/"
+      "structure\\structure\\": "src/"
     }
   },
   "license": "MIT",

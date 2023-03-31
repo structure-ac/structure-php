@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Models\Shared;
+namespace structure\structure\Models\Shared;
 
 
 class Account

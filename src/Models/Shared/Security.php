@@ -6,16 +6,16 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Models\Shared;
+namespace structure\structure\Models\Shared;
 
-use \structure\Structure\Utils\SpeakeasyMetadata;
+use \structure\structure\Utils\SpeakeasyMetadata;
 class Security
 {
-	#[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer')]
-    public SchemeBearerAuth $bearerAuth;
+	#[SpeakeasyMetadata('security:scheme=true,type=http,subtype=bearer,name=Authorization')]
+    public string $bearerAuth;
     
 	public function __construct()
 	{
-		$this->bearerAuth = new \structure\Structure\Models\Shared\SchemeBearerAuth();
+		$this->bearerAuth = "";
 	}
 }

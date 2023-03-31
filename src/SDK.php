@@ -6,12 +6,12 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 /**
  * SDK - Structure provides company and people data. Use our dataset of 700 million people and 24 million companies to build products, enrich person profiles, power predictive modeling/ai, analysis, and more.
  * 
- * @package structure\Structure
+ * @package structure\structure
  * @access public
  */
 class SDK
@@ -36,8 +36,8 @@ class SDK
 	private ?Models\Shared\Security $_security;
 	private string $_serverUrl;
 	private string $_language = 'php';
-	private string $_sdkVersion = '1.0.0';
-	private string $_genVersion = '2.16.5';
+	private string $_sdkVersion = '0.0.1';
+	private string $_genVersion = '2.16.7';
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.

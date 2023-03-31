@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Models\Operations;
+namespace structure\structure\Models\Operations;
 
 
 class AccountsResponse

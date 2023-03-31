@@ -6,12 +6,12 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 /**
  * SDKBuilder is used to configure and build an instance of the SDK.
  * 
- * @package structure\Structure
+ * @package structure\structure
  */
 class SDKBuilder
 {

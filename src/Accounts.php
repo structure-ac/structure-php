@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 class Accounts 
 {
@@ -40,10 +40,10 @@ class Accounts
     /**
      * Show current user accounts
      * 
-     * @return \structure\Structure\Models\Operations\AccountsResponse
+     * @return \structure\structure\Models\Operations\AccountsResponse
      */
 	public function accounts(
-    ): \structure\Structure\Models\Operations\AccountsResponse
+    ): \structure\structure\Models\Operations\AccountsResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/accounts');
@@ -54,7 +54,7 @@ class Accounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\AccountsResponse();
+        $response = new \structure\structure\Models\Operations\AccountsResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

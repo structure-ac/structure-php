@@ -6,13 +6,13 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Models\Shared;
+namespace structure\structure\Models\Shared;
 
 
 /**
  * Person - returns the person
  * 
- * @package structure\Structure\Models\Shared
+ * @package structure\structure\Models\Shared
  * @access public
  */
 class Person

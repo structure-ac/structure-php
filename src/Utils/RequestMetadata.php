@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Utils;
+namespace structure\structure\Utils;
 
 class RequestMetadata
 {

@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 class Auths 
 {
@@ -40,12 +40,12 @@ class Auths
     /**
      * Login user
      * 
-     * @param \structure\Structure\Models\Operations\AuthsRequest $request
-     * @return \structure\Structure\Models\Operations\AuthsResponse
+     * @param \structure\structure\Models\Operations\AuthsApplicationJSON $request
+     * @return \structure\structure\Models\Operations\AuthsResponse
      */
 	public function auths(
-        \structure\Structure\Models\Operations\AuthsRequest $request,
-    ): \structure\Structure\Models\Operations\AuthsResponse
+        \structure\structure\Models\Operations\AuthsApplicationJSON $request,
+    ): \structure\structure\Models\Operations\AuthsResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/auths');
@@ -61,7 +61,7 @@ class Auths
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\AuthsResponse();
+        $response = new \structure\structure\Models\Operations\AuthsResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

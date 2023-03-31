@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure\Utils;
+namespace structure\structure\Utils;
 
 use JMS\Serializer\Context;
 use JMS\Serializer\GraphNavigator;

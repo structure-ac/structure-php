@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-namespace structure\Structure;
+namespace structure\structure;
 
 class Companies 
 {
@@ -40,24 +40,24 @@ class Companies
     /**
      * Show company employees
      * 
-     * @param \structure\Structure\Models\Operations\CompanyEmployeesRequest $request
-     * @return \structure\Structure\Models\Operations\CompanyEmployeesResponse
+     * @param \structure\structure\Models\Operations\CompanyEmployeesRequest $request
+     * @return \structure\structure\Models\Operations\CompanyEmployeesResponse
      */
 	public function companyEmployees(
-        \structure\Structure\Models\Operations\CompanyEmployeesRequest $request,
-    ): \structure\Structure\Models\Operations\CompanyEmployeesResponse
+        \structure\structure\Models\Operations\CompanyEmployeesRequest $request,
+    ): \structure\structure\Models\Operations\CompanyEmployeesResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\Structure\Models\Operations\CompanyEmployeesPathParams::class, $request->pathParams);
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\structure\Models\Operations\CompanyEmployeesRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyEmployeesQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\structure\Models\Operations\CompanyEmployeesRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\CompanyEmployeesResponse();
+        $response = new \structure\structure\Models\Operations\CompanyEmployeesResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -76,24 +76,24 @@ class Companies
     /**
      * Show company jobs
      * 
-     * @param \structure\Structure\Models\Operations\CompanyJobsRequest $request
-     * @return \structure\Structure\Models\Operations\CompanyJobsResponse
+     * @param \structure\structure\Models\Operations\CompanyJobsRequest $request
+     * @return \structure\structure\Models\Operations\CompanyJobsResponse
      */
 	public function companyJobs(
-        \structure\Structure\Models\Operations\CompanyJobsRequest $request,
-    ): \structure\Structure\Models\Operations\CompanyJobsResponse
+        \structure\structure\Models\Operations\CompanyJobsRequest $request,
+    ): \structure\structure\Models\Operations\CompanyJobsResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\Structure\Models\Operations\CompanyJobsPathParams::class, $request->pathParams);
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\structure\Models\Operations\CompanyJobsRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyJobsQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\structure\Models\Operations\CompanyJobsRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\CompanyJobsResponse();
+        $response = new \structure\structure\Models\Operations\CompanyJobsResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -112,24 +112,24 @@ class Companies
     /**
      * Enrich a company profile
      * 
-     * @param \structure\Structure\Models\Operations\EnrichCompanyRequest $request
-     * @return \structure\Structure\Models\Operations\EnrichCompanyResponse
+     * @param \structure\structure\Models\Operations\EnrichCompanyRequest $request
+     * @return \structure\structure\Models\Operations\EnrichCompanyResponse
      */
 	public function enrichCompany(
-        \structure\Structure\Models\Operations\EnrichCompanyRequest $request,
-    ): \structure\Structure\Models\Operations\EnrichCompanyResponse
+        \structure\structure\Models\Operations\EnrichCompanyRequest $request,
+    ): \structure\structure\Models\Operations\EnrichCompanyResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/companies/enrich');
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\structure\Models\Operations\EnrichCompanyRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\EnrichCompanyResponse();
+        $response = new \structure\structure\Models\Operations\EnrichCompanyResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
@@ -148,12 +148,12 @@ class Companies
     /**
      * Search Companies
      * 
-     * @param \structure\Structure\Models\Operations\SearchCompaniesRequest $request
-     * @return \structure\Structure\Models\Operations\SearchCompaniesResponse
+     * @param \structure\structure\Models\Operations\SearchCompaniesApplicationJSON $request
+     * @return \structure\structure\Models\Operations\SearchCompaniesResponse
      */
 	public function searchCompanies(
-        \structure\Structure\Models\Operations\SearchCompaniesRequest $request,
-    ): \structure\Structure\Models\Operations\SearchCompaniesResponse
+        \structure\structure\Models\Operations\SearchCompaniesApplicationJSON $request,
+    ): \structure\structure\Models\Operations\SearchCompaniesResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/companies/search');
@@ -166,7 +166,7 @@ class Companies
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\SearchCompaniesResponse();
+        $response = new \structure\structure\Models\Operations\SearchCompaniesResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;
