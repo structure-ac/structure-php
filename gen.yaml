@@ -10,6 +10,6 @@ generation:
   sdkFlattening: true
   singleTagPerOp: false
 php:
-  version: 0.0.1
+  version: ""
   namespace: structure\Structure
-  packageName: structure/Structure
+  packageName: structure/structure
