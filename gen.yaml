@@ -6,5 +6,5 @@ generation:
   singleTagPerOp: false
 php:
   version: ""
-  namespace: structure\structure
+  namespace: structure\Structure
   packageName: structure/structure
