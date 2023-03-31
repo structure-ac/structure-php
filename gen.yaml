@@ -12,4 +12,4 @@ generation:
 php:
   version: ""
   namespace: structure\Structure
-  packageName: structure/Structure
+  packageName: structure/structure
