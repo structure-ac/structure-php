@@ -43,7 +43,7 @@ class People
      * @param \structure\Structure\Models\Operations\EnrichPersonRequest $request
      * @return \structure\Structure\Models\Operations\EnrichPersonResponse
      */
-	public function enrichPerson(
+	public function enrich(
         \structure\Structure\Models\Operations\EnrichPersonRequest $request,
     ): \structure\Structure\Models\Operations\EnrichPersonResponse
     {
@@ -51,7 +51,7 @@ class People
         $url = Utils\Utils::generateUrl($baseUrl, '/people/enrich');
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichPersonQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichPersonRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -76,12 +76,12 @@ class People
     /**
      * Search People
      * 
-     * @param \structure\Structure\Models\Operations\SearchSearchRequest $request
-     * @return \structure\Structure\Models\Operations\SearchSearchResponse
+     * @param \structure\Structure\Models\Operations\SearchPeopleApplicationJSON $request
+     * @return \structure\Structure\Models\Operations\SearchPeopleResponse
      */
-	public function searchSearch(
-        \structure\Structure\Models\Operations\SearchSearchRequest $request,
-    ): \structure\Structure\Models\Operations\SearchSearchResponse
+	public function search(
+        \structure\Structure\Models\Operations\SearchPeopleApplicationJSON $request,
+    ): \structure\Structure\Models\Operations\SearchPeopleResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/people/search');
@@ -94,7 +94,7 @@ class People
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\SearchSearchResponse();
+        $response = new \structure\Structure\Models\Operations\SearchPeopleResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

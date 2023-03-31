@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace structure\Structure\Models\Operations;
 
 
-class AuthsResponse
+class ListEmployeesResponse
 {
 	
     public ?string $body = null;

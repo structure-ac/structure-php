@@ -38,84 +38,12 @@ class Companies
 	}
 	
     /**
-     * Show company employees
-     * 
-     * @param \structure\Structure\Models\Operations\CompanyEmployeesRequest $request
-     * @return \structure\Structure\Models\Operations\CompanyEmployeesResponse
-     */
-	public function companyEmployees(
-        \structure\Structure\Models\Operations\CompanyEmployeesRequest $request,
-    ): \structure\Structure\Models\Operations\CompanyEmployeesResponse
-    {
-        $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\Structure\Models\Operations\CompanyEmployeesPathParams::class, $request->pathParams);
-        
-        $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyEmployeesQueryParams::class, $request->queryParams, null));
-        
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $response = new \structure\Structure\Models\Operations\CompanyEmployeesResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200) {
-            if (Utils\Utils::matchContentType($contentType, '*/*')) {
-                $response->body = $httpResponse->getBody()->getContents();
-            }
-        }
-        else if ($httpResponse->getStatusCode() === 401 or $httpResponse->getStatusCode() === 403 or $httpResponse->getStatusCode() === 404) {
-        }
-
-        return $response;
-    }
-	
-    /**
-     * Show company jobs
-     * 
-     * @param \structure\Structure\Models\Operations\CompanyJobsRequest $request
-     * @return \structure\Structure\Models\Operations\CompanyJobsResponse
-     */
-	public function companyJobs(
-        \structure\Structure\Models\Operations\CompanyJobsRequest $request,
-    ): \structure\Structure\Models\Operations\CompanyJobsResponse
-    {
-        $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\Structure\Models\Operations\CompanyJobsPathParams::class, $request->pathParams);
-        
-        $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyJobsQueryParams::class, $request->queryParams, null));
-        
-        $httpResponse = $this->_securityClient->request('GET', $url, $options);
-        
-        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
-
-        $response = new \structure\Structure\Models\Operations\CompanyJobsResponse();
-        $response->statusCode = $httpResponse->getStatusCode();
-        $response->contentType = $contentType;
-        $response->rawResponse = $httpResponse;
-        
-        if ($httpResponse->getStatusCode() === 200) {
-            if (Utils\Utils::matchContentType($contentType, '*/*')) {
-                $response->body = $httpResponse->getBody()->getContents();
-            }
-        }
-        else if ($httpResponse->getStatusCode() === 401 or $httpResponse->getStatusCode() === 403 or $httpResponse->getStatusCode() === 404) {
-        }
-
-        return $response;
-    }
-	
-    /**
      * Enrich a company profile
      * 
      * @param \structure\Structure\Models\Operations\EnrichCompanyRequest $request
      * @return \structure\Structure\Models\Operations\EnrichCompanyResponse
      */
-	public function enrichCompany(
+	public function enrich(
         \structure\Structure\Models\Operations\EnrichCompanyRequest $request,
     ): \structure\Structure\Models\Operations\EnrichCompanyResponse
     {
@@ -123,7 +51,7 @@ class Companies
         $url = Utils\Utils::generateUrl($baseUrl, '/companies/enrich');
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -146,13 +74,85 @@ class Companies
     }
 	
     /**
+     * List company employees
+     * 
+     * @param \structure\Structure\Models\Operations\ListEmployeesRequest $request
+     * @return \structure\Structure\Models\Operations\ListEmployeesResponse
+     */
+	public function listEmployees(
+        \structure\Structure\Models\Operations\ListEmployeesRequest $request,
+    ): \structure\Structure\Models\Operations\ListEmployeesResponse
+    {
+        $baseUrl = $this->_serverUrl;
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\Structure\Models\Operations\ListEmployeesRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\ListEmployeesRequest::class, $request, null));
+        
+        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \structure\Structure\Models\Operations\ListEmployeesResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, '*/*')) {
+                $response->body = $httpResponse->getBody()->getContents();
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401 or $httpResponse->getStatusCode() === 403 or $httpResponse->getStatusCode() === 404) {
+        }
+
+        return $response;
+    }
+	
+    /**
+     * List company jobs
+     * 
+     * @param \structure\Structure\Models\Operations\ListJobsRequest $request
+     * @return \structure\Structure\Models\Operations\ListJobsResponse
+     */
+	public function listJobs(
+        \structure\Structure\Models\Operations\ListJobsRequest $request,
+    ): \structure\Structure\Models\Operations\ListJobsResponse
+    {
+        $baseUrl = $this->_serverUrl;
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\Structure\Models\Operations\ListJobsRequest::class, $request);
+        
+        $options = ['http_errors' => false];
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\ListJobsRequest::class, $request, null));
+        
+        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \structure\Structure\Models\Operations\ListJobsResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, '*/*')) {
+                $response->body = $httpResponse->getBody()->getContents();
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401 or $httpResponse->getStatusCode() === 403 or $httpResponse->getStatusCode() === 404) {
+        }
+
+        return $response;
+    }
+	
+    /**
      * Search Companies
      * 
-     * @param \structure\Structure\Models\Operations\SearchCompaniesRequest $request
+     * @param \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request
      * @return \structure\Structure\Models\Operations\SearchCompaniesResponse
      */
-	public function searchCompanies(
-        \structure\Structure\Models\Operations\SearchCompaniesRequest $request,
+	public function search(
+        \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request,
     ): \structure\Structure\Models\Operations\SearchCompaniesResponse
     {
         $baseUrl = $this->_serverUrl;

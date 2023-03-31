@@ -20,15 +20,33 @@ class SDK
 		'https://www.structure.ac/api/v1',
 	];
   	
+    /**
+     * Accounts
+     * 
+     * @var Accounts $$accounts
+     */
 	public Accounts $accounts;
 	
-	public Auths $auths;
-	
+    /**
+     * Companies
+     * 
+     * @var Companies $$companies
+     */
 	public Companies $companies;
 	
-	public Me $me;
-	
+    /**
+     * People
+     * 
+     * @var People $$people
+     */
 	public People $people;
+	
+    /**
+     * User
+     * 
+     * @var User $$user
+     */
+	public User $user;
 		
 	// SDK private variables namespaced with _ to avoid conflicts with API models
 	private ?\GuzzleHttp\ClientInterface $_defaultClient;
@@ -36,8 +54,8 @@ class SDK
 	private ?Models\Shared\Security $_security;
 	private string $_serverUrl;
 	private string $_language = 'php';
-	private string $_sdkVersion = '1.0.0';
-	private string $_genVersion = '2.16.5';
+	private string $_sdkVersion = '0.0.1';
+	private string $_genVersion = '2.16.7';
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
@@ -92,15 +110,6 @@ class SDK
 			$this->_genVersion
 		);
 		
-		$this->auths = new Auths(
-			$this->_defaultClient,
-			$this->_securityClient,
-			$this->_serverUrl,
-			$this->_language,
-			$this->_sdkVersion,
-			$this->_genVersion
-		);
-		
 		$this->companies = new Companies(
 			$this->_defaultClient,
 			$this->_securityClient,
@@ -110,7 +119,7 @@ class SDK
 			$this->_genVersion
 		);
 		
-		$this->me = new Me(
+		$this->people = new People(
 			$this->_defaultClient,
 			$this->_securityClient,
 			$this->_serverUrl,
@@ -119,7 +128,7 @@ class SDK
 			$this->_genVersion
 		);
 		
-		$this->people = new People(
+		$this->user = new User(
 			$this->_defaultClient,
 			$this->_securityClient,
 			$this->_serverUrl,

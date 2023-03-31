@@ -8,14 +8,46 @@ declare(strict_types=1);
 
 namespace structure\Structure\Models\Operations;
 
-
+use \structure\Structure\Utils\SpeakeasyMetadata;
 class EnrichCompanyRequest
 {
-	
-    public EnrichCompanyQueryParams $queryParams;
+    /**
+     * Country code of the company
+     * 
+     * @var ?string $countryCode
+     */
+	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=country_code')]
+    public ?string $countryCode = null;
+    
+    /**
+     * The headquarters of the company
+     * 
+     * @var ?string $headquarters
+     */
+	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=headquarters')]
+    public ?string $headquarters = null;
+    
+    /**
+     * ID of the company
+     * 
+     * @var ?string $id
+     */
+	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=id')]
+    public ?string $id = null;
+    
+    /**
+     * Game of the company
+     * 
+     * @var ?string $name
+     */
+	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=name')]
+    public ?string $name = null;
     
 	public function __construct()
 	{
-		$this->queryParams = new \structure\Structure\Models\Operations\EnrichCompanyQueryParams();
+		$this->countryCode = null;
+		$this->headquarters = null;
+		$this->id = null;
+		$this->name = null;
 	}
 }
