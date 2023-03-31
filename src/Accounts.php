@@ -40,10 +40,10 @@ class Accounts
     /**
      * Show current user accounts
      * 
-     * @return \structure\Structure\Models\Operations\AccountsResponse
+     * @return \structure\Structure\Models\Operations\ListUsersResponse
      */
-	public function accounts(
-    ): \structure\Structure\Models\Operations\AccountsResponse
+	public function listUsers(
+    ): \structure\Structure\Models\Operations\ListUsersResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/accounts');
@@ -54,7 +54,7 @@ class Accounts
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\AccountsResponse();
+        $response = new \structure\Structure\Models\Operations\ListUsersResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

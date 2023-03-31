@@ -9,8 +9,16 @@ declare(strict_types=1);
 namespace structure\Structure\Models\Operations;
 
 use \structure\Structure\Utils\SpeakeasyMetadata;
-class CompanyEmployeesQueryParams
+class ListJobsRequest
 {
+    /**
+     * ID of the company
+     * 
+     * @var string $id
+     */
+	#[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
+    public string $id;
+    
     /**
      * The offset number to start at
      * 
@@ -29,6 +37,7 @@ class CompanyEmployeesQueryParams
     
 	public function __construct()
 	{
+		$this->id = "";
 		$this->offset = null;
 		$this->perPage = null;
 	}

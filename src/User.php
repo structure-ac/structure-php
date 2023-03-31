@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace structure\Structure;
 
-class Auths 
+class User 
 {
 
 	// SDK private variables namespaced with _ to avoid conflicts with API models
@@ -40,12 +40,12 @@ class Auths
     /**
      * Login user
      * 
-     * @param \structure\Structure\Models\Operations\AuthsRequest $request
-     * @return \structure\Structure\Models\Operations\AuthsResponse
+     * @param \structure\Structure\Models\Operations\LoginApplicationJSON $request
+     * @return \structure\Structure\Models\Operations\LoginResponse
      */
-	public function auths(
-        \structure\Structure\Models\Operations\AuthsRequest $request,
-    ): \structure\Structure\Models\Operations\AuthsResponse
+	public function login(
+        \structure\Structure\Models\Operations\LoginApplicationJSON $request,
+    ): \structure\Structure\Models\Operations\LoginResponse
     {
         $baseUrl = $this->_serverUrl;
         $url = Utils\Utils::generateUrl($baseUrl, '/auths');
@@ -61,7 +61,40 @@ class Auths
         
         $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
 
-        $response = new \structure\Structure\Models\Operations\AuthsResponse();
+        $response = new \structure\Structure\Models\Operations\LoginResponse();
+        $response->statusCode = $httpResponse->getStatusCode();
+        $response->contentType = $contentType;
+        $response->rawResponse = $httpResponse;
+        
+        if ($httpResponse->getStatusCode() === 200) {
+            if (Utils\Utils::matchContentType($contentType, '*/*')) {
+                $response->body = $httpResponse->getBody()->getContents();
+            }
+        }
+        else if ($httpResponse->getStatusCode() === 401) {
+        }
+
+        return $response;
+    }
+	
+    /**
+     * Show current user
+     * 
+     * @return \structure\Structure\Models\Operations\MeResponse
+     */
+	public function me(
+    ): \structure\Structure\Models\Operations\MeResponse
+    {
+        $baseUrl = $this->_serverUrl;
+        $url = Utils\Utils::generateUrl($baseUrl, '/me');
+        
+        $options = ['http_errors' => false];
+        
+        $httpResponse = $this->_securityClient->request('GET', $url, $options);
+        
+        $contentType = $httpResponse->getHeader('Content-Type')[0] ?? '';
+
+        $response = new \structure\Structure\Models\Operations\MeResponse();
         $response->statusCode = $httpResponse->getStatusCode();
         $response->contentType = $contentType;
         $response->rawResponse = $httpResponse;

@@ -9,7 +9,7 @@ declare(strict_types=1);
 namespace structure\Structure\Models\Operations;
 
 
-class SearchSearchResponse
+class ListJobsResponse
 {
 	
     public ?string $body = null;

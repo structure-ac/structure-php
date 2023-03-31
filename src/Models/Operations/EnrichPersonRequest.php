@@ -8,14 +8,19 @@ declare(strict_types=1);
 
 namespace structure\Structure\Models\Operations;
 
-
+use \structure\Structure\Utils\SpeakeasyMetadata;
 class EnrichPersonRequest
 {
-	
-    public EnrichPersonQueryParams $queryParams;
+    /**
+     * LinkedIn ID of the person
+     * 
+     * @var ?string $id
+     */
+	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=id')]
+    public ?string $id = null;
     
 	public function __construct()
 	{
-		$this->queryParams = new \structure\Structure\Models\Operations\EnrichPersonQueryParams();
+		$this->id = null;
 	}
 }
