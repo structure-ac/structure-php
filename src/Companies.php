@@ -48,10 +48,10 @@ class Companies
     ): \structure\Structure\Models\Operations\CompanyEmployeesResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\Structure\Models\Operations\CompanyEmployeesPathParams::class, $request->pathParams);
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/employees', \structure\Structure\Models\Operations\CompanyEmployeesRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyEmployeesQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyEmployeesRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -84,10 +84,10 @@ class Companies
     ): \structure\Structure\Models\Operations\CompanyJobsResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\Structure\Models\Operations\CompanyJobsPathParams::class, $request->pathParams);
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/jobs', \structure\Structure\Models\Operations\CompanyJobsRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyJobsQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\CompanyJobsRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -123,7 +123,7 @@ class Companies
         $url = Utils\Utils::generateUrl($baseUrl, '/companies/enrich');
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -148,11 +148,11 @@ class Companies
     /**
      * Search Companies
      * 
-     * @param \structure\Structure\Models\Operations\SearchCompaniesRequest $request
+     * @param \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request
      * @return \structure\Structure\Models\Operations\SearchCompaniesResponse
      */
 	public function searchCompanies(
-        \structure\Structure\Models\Operations\SearchCompaniesRequest $request,
+        \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request,
     ): \structure\Structure\Models\Operations\SearchCompaniesResponse
     {
         $baseUrl = $this->_serverUrl;

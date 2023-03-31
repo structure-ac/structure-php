@@ -51,7 +51,7 @@ class People
         $url = Utils\Utils::generateUrl($baseUrl, '/people/enrich');
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichPersonQueryParams::class, $request->queryParams, null));
+        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichPersonRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         
@@ -76,11 +76,11 @@ class People
     /**
      * Search People
      * 
-     * @param \structure\Structure\Models\Operations\SearchSearchRequest $request
+     * @param \structure\Structure\Models\Operations\SearchSearchApplicationJSON $request
      * @return \structure\Structure\Models\Operations\SearchSearchResponse
      */
 	public function searchSearch(
-        \structure\Structure\Models\Operations\SearchSearchRequest $request,
+        \structure\Structure\Models\Operations\SearchSearchApplicationJSON $request,
     ): \structure\Structure\Models\Operations\SearchSearchResponse
     {
         $baseUrl = $this->_serverUrl;

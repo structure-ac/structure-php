@@ -40,11 +40,11 @@ class Auths
     /**
      * Login user
      * 
-     * @param \structure\Structure\Models\Operations\AuthsRequest $request
+     * @param \structure\Structure\Models\Operations\AuthsApplicationJSON $request
      * @return \structure\Structure\Models\Operations\AuthsResponse
      */
 	public function auths(
-        \structure\Structure\Models\Operations\AuthsRequest $request,
+        \structure\Structure\Models\Operations\AuthsApplicationJSON $request,
     ): \structure\Structure\Models\Operations\AuthsResponse
     {
         $baseUrl = $this->_serverUrl;
