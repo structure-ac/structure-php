@@ -5,26 +5,8 @@
 
 ### Composer
 
-To install the SDK first add the below to your `composer.json` file:
-
-```json
-{
-    "repositories": [
-        {
-            "type": "github",
-            "url": "https://github.com/structure-ac/structure-php.git"
-        }
-    ],
-    "require": {
-        "structure/structure": "*"
-    }
-}
-```
-
-Then run the following command:
-
 ```bash
-composer update
+composer require "structure/structure"
 ```
 <!-- End SDK Installation -->
 
