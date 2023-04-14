@@ -17,10 +17,10 @@ $sdk = SDK::builder()
 
 try {
     $request = new EnrichCompanyRequest();
-    $request->countryCode = 'corrupti';
+    $request->countryCode = 'MA';
     $request->headquarters = 'provident';
-    $request->id = 'distinctio';
-    $request->name = 'quibusdam';
+    $request->id = 'bd9d8d69-a674-4e0f-867c-c8796ed151a0';
+    $request->name = 'Estelle Will';
 
     $response = $sdk->companies->enrich($request);
 
