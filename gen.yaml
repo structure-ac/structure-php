@@ -7,9 +7,9 @@ management:
 generation:
   telemetryEnabled: false
   sdkClassName: SDK
-  sdkFlattening: false
+  sdkFlattening: true
   singleTagPerOp: false
 php:
-  version: 0.1.0
+  version: ""
   namespace: structure\Structure
   packageName: structure/structure
