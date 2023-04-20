@@ -12,42 +12,15 @@ use \structure\Structure\Utils\SpeakeasyMetadata;
 class EnrichCompanyRequest
 {
     /**
-     * Country code of the company
-     * 
-     * @var ?string $countryCode
-     */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=country_code')]
-    public ?string $countryCode = null;
-    
-    /**
-     * The headquarters of the company
-     * 
-     * @var ?string $headquarters
-     */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=headquarters')]
-    public ?string $headquarters = null;
-    
-    /**
      * ID of the company
      * 
-     * @var ?string $id
+     * @var string $id
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=id')]
-    public ?string $id = null;
-    
-    /**
-     * Game of the company
-     * 
-     * @var ?string $name
-     */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=name')]
-    public ?string $name = null;
+	#[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
+    public string $id;
     
 	public function __construct()
 	{
-		$this->countryCode = null;
-		$this->headquarters = null;
-		$this->id = null;
-		$this->name = null;
+		$this->id = "";
 	}
 }

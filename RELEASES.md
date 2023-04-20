@@ -35,7 +35,6 @@ Based on:
 - Speakeasy CLI 1.19.7 (2.17.9) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Composer v0.1.0] https://packagist.org/packages/structure/structure#v0.1.0 - .
-
 ## 2023-04-14 01:22:51
 ### Changes
 Based on:
@@ -59,3 +58,4 @@ Based on:
 - Speakeasy CLI 1.20.2 (2.18.2) https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Composer v0.2.2] https://packagist.org/packages/structure/structure#v0.2.2 - .
+

@@ -16,8 +16,26 @@
 
 ### Composer
 
+To install the SDK first add the below to your `composer.json` file:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/structure-ac/structure-php.git"
+        }
+    ],
+    "require": {
+        "structure/structure": "*"
+    }
+}
+```
+
+Then run the following command:
+
 ```bash
-composer require "structure/structure"
+composer update
 ```
 <!-- End SDK Installation -->
 
@@ -77,10 +95,7 @@ $sdk = SDK::builder()
 
 try {
     $request = new EnrichCompanyRequest();
-    $request->countryCode = 'MA';
-    $request->headquarters = 'provident';
     $request->id = 'bd9d8d69-a674-4e0f-867c-c8796ed151a0';
-    $request->name = 'Estelle Will';
 
     $response = $sdk->companies->enrich($request);
 
@@ -108,10 +123,7 @@ $sdk = SDK::builder()
 
 try {
     $request = new EnrichCompanyRequest();
-    $request->countryCode = 'MA';
-    $request->headquarters = 'provident';
     $request->id = 'bd9d8d69-a674-4e0f-867c-c8796ed151a0';
-    $request->name = 'Estelle Will';
 
     $response = $sdk->companies->enrich($request);
 
@@ -139,10 +151,7 @@ $sdk = SDK::builder()
 
 try {
     $request = new EnrichCompanyRequest();
-    $request->countryCode = 'MA';
-    $request->headquarters = 'provident';
     $request->id = 'bd9d8d69-a674-4e0f-867c-c8796ed151a0';
-    $request->name = 'Estelle Will';
 
     $response = $sdk->companies->enrich($request);
 

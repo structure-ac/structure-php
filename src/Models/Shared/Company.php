@@ -170,6 +170,14 @@ class Company
     public string $organizationType;
     
     /**
+     * The company's profiles
+     * 
+     * @var array<string> $profiles
+     */
+	
+    public array $profiles;
+    
+    /**
      * The comapny's headquarters region
      * 
      * @var string $region
@@ -254,6 +262,7 @@ class Company
 		$this->logo = "";
 		$this->name = "";
 		$this->organizationType = "";
+		$this->profiles = [];
 		$this->region = "";
 		$this->similar = [];
 		$this->slogan = "";
