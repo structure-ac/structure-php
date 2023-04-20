@@ -48,10 +48,9 @@ class People
     ): \structure\Structure\Models\Operations\EnrichPersonResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/people/enrich');
+        $url = Utils\Utils::generateUrl($baseUrl, '/people/{id}/enrich', \structure\Structure\Models\Operations\EnrichPersonRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichPersonRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         

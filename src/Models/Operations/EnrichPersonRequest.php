@@ -14,13 +14,13 @@ class EnrichPersonRequest
     /**
      * LinkedIn ID of the person
      * 
-     * @var ?string $id
+     * @var string $id
      */
-	#[SpeakeasyMetadata('queryParam:style=form,explode=true,name=id')]
-    public ?string $id = null;
+	#[SpeakeasyMetadata('pathParam:style=simple,explode=false,name=id')]
+    public string $id;
     
 	public function __construct()
 	{
-		$this->id = null;
+		$this->id = "";
 	}
 }

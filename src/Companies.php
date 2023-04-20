@@ -48,10 +48,9 @@ class Companies
     ): \structure\Structure\Models\Operations\EnrichCompanyResponse
     {
         $baseUrl = $this->_serverUrl;
-        $url = Utils\Utils::generateUrl($baseUrl, '/companies/enrich');
+        $url = Utils\Utils::generateUrl($baseUrl, '/companies/{id}/enrich', \structure\Structure\Models\Operations\EnrichCompanyRequest::class, $request);
         
         $options = ['http_errors' => false];
-        $options = array_merge_recursive($options, Utils\Utils::getQueryParams(\structure\Structure\Models\Operations\EnrichCompanyRequest::class, $request, null));
         
         $httpResponse = $this->_securityClient->request('GET', $url, $options);
         

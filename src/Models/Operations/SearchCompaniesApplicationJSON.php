@@ -22,7 +22,7 @@ class SearchCompaniesApplicationJSON
     public ?string $filter = null;
     
     /**
-     * Number of results per page (0-100)
+     * Number of results per page (0-100) default 10
      * 
      * @var ?string $limit
      */

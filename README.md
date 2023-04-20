@@ -16,8 +16,26 @@
 
 ### Composer
 
+To install the SDK first add the below to your `composer.json` file:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "github",
+            "url": "https://github.com/structure-ac/structure-php.git"
+        }
+    ],
+    "require": {
+        "structure/structure": "*"
+    }
+}
+```
+
+Then run the following command:
+
 ```bash
-composer require "structure/structure"
+composer update
 ```
 <!-- End SDK Installation -->
 
@@ -50,6 +68,34 @@ try {
     $request->headquarters = 'provident';
     $request->id = 'distinctio';
     $request->name = 'quibusdam';
+
+    $response = $sdk->companies->enrich($request);
+
+    if ($response->body !== null) {
+        // handle response
+    }
+} catch (Exception $e) {
+    // handle exception
+}
+``````php
+<?php
+
+declare(strict_types=1);
+
+use structure\Structure\SDK;
+use \structure\Structure\Models\Shared\Security;
+use \structure\Structure\Models\Operations\EnrichCompanyRequest;
+
+$security = new Security();
+$security->bearerAuth = 'Bearer YOUR_BEARER_TOKEN_HERE';
+
+$sdk = SDK::builder()
+    ->setSecurity($security);
+    ->build();
+
+try {
+    $request = new EnrichCompanyRequest();
+    $request->id = '89bd9d8d-69a6-474e-8f46-7cc8796ed151';
 
     $response = $sdk->companies->enrich($request);
 
