@@ -59,3 +59,10 @@ Based on:
 ### Releases
 - [Composer v0.2.2] https://packagist.org/packages/structure/structure#v0.2.2 - .
 
+
+
+## 2023-04-21 01:23:00
+### Changes
+Based on:
+- OpenAPI Doc 1.0 https://prod.speakeasyapi.dev/v1/apis/Structure/version/1.0.0/schema/download
+- Speakeasy CLI 1.21.4 (2.19.1) https://github.com/speakeasy-api/speakeasy
