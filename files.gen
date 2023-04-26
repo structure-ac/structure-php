@@ -42,4 +42,9 @@ src/Models/Shared/Account.php
 src/Models/Shared/Company.php
 src/Models/Shared/Person.php
 src/Models/Shared/Security.php
+docs/sdk/README.md
+docs/accounts/README.md
+docs/companies/README.md
+docs/people/README.md
+docs/user/README.md
 USAGE.md

@@ -1,4 +1,19 @@
-<!-- Start SDK Example Usage -->
+# accounts
+
+## Overview
+
+Accounts
+
+### Available Operations
+
+* [listUsers](#listusers) - Show current user accounts
+
+## listUsers
+
+Show current user accounts
+
+### Example Usage
+
 ```php
 <?php
 
@@ -7,16 +22,12 @@ require_once 'vendor/autoload.php';
 
 use \structure\Structure\SDK;
 use \structure\Structure\Models\Shared\Security;
-use \structure\Structure\Models\Operations\EnrichCompanyRequest;
 
 $sdk = SDK::builder()
     ->build();
 
 try {
-    $request = new EnrichCompanyRequest();
-    $request->id = '89bd9d8d-69a6-474e-8f46-7cc8796ed151';
-
-    $response = $sdk->companies->enrich($request);
+    $response = $sdk->accounts->listUsers();
 
     if ($response->body !== null) {
         // handle response
@@ -25,4 +36,3 @@ try {
     // handle exception
 }
 ```
-<!-- End SDK Example Usage -->
