@@ -2,13 +2,13 @@ configVersion: 1.0.0
 management:
   docChecksum: e0bf2d205ca94a0d32bd91d6ea558d5b
   docVersion: "1.0"
-  speakeasyVersion: 1.25.1
-  generationVersion: 2.22.0
+  speakeasyVersion: 1.26.2
+  generationVersion: 2.23.2
 generation:
   telemetryEnabled: false
   sdkClassName: SDK
   singleTagPerOp: false
 php:
-  version: 0.6.0
+  version: 0.7.0
   namespace: structure\Structure
   packageName: structure/structure

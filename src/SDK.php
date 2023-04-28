@@ -54,8 +54,8 @@ class SDK
 	private ?Models\Shared\Security $_security;
 	private string $_serverUrl;
 	private string $_language = 'php';
-	private string $_sdkVersion = '0.6.0';
-	private string $_genVersion = '2.22.0';
+	private string $_sdkVersion = '0.7.0';
+	private string $_genVersion = '2.23.2';
 
 	/**
 	 * Returns a new instance of the SDK builder used to configure and create the SDK instance.
