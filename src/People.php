@@ -43,7 +43,8 @@ class People
      * @param \structure\Structure\Models\Operations\EnrichPersonRequest $request
      * @return \structure\Structure\Models\Operations\EnrichPersonResponse
      */
-	public function enrich(
+	
+    public function enrich(
         \structure\Structure\Models\Operations\EnrichPersonRequest $request,
     ): \structure\Structure\Models\Operations\EnrichPersonResponse
     {
@@ -78,7 +79,8 @@ class People
      * @param \structure\Structure\Models\Operations\SearchPeopleApplicationJSON $request
      * @return \structure\Structure\Models\Operations\SearchPeopleResponse
      */
-	public function search(
+	
+    public function search(
         \structure\Structure\Models\Operations\SearchPeopleApplicationJSON $request,
     ): \structure\Structure\Models\Operations\SearchPeopleResponse
     {
