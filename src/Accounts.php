@@ -42,8 +42,7 @@ class Accounts
      * 
      * @return \structure\Structure\Models\Operations\ListUsersResponse
      */
-	
-    public function listUsers(
+	public function listUsers(
     ): \structure\Structure\Models\Operations\ListUsersResponse
     {
         $baseUrl = $this->_serverUrl;

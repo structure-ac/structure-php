@@ -43,8 +43,7 @@ class Companies
      * @param \structure\Structure\Models\Operations\EnrichCompanyRequest $request
      * @return \structure\Structure\Models\Operations\EnrichCompanyResponse
      */
-	
-    public function enrich(
+	public function enrich(
         \structure\Structure\Models\Operations\EnrichCompanyRequest $request,
     ): \structure\Structure\Models\Operations\EnrichCompanyResponse
     {
@@ -79,8 +78,7 @@ class Companies
      * @param \structure\Structure\Models\Operations\ListEmployeesRequest $request
      * @return \structure\Structure\Models\Operations\ListEmployeesResponse
      */
-	
-    public function listEmployees(
+	public function listEmployees(
         \structure\Structure\Models\Operations\ListEmployeesRequest $request,
     ): \structure\Structure\Models\Operations\ListEmployeesResponse
     {
@@ -116,8 +114,7 @@ class Companies
      * @param \structure\Structure\Models\Operations\ListJobsRequest $request
      * @return \structure\Structure\Models\Operations\ListJobsResponse
      */
-	
-    public function listJobs(
+	public function listJobs(
         \structure\Structure\Models\Operations\ListJobsRequest $request,
     ): \structure\Structure\Models\Operations\ListJobsResponse
     {
@@ -153,8 +150,7 @@ class Companies
      * @param \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request
      * @return \structure\Structure\Models\Operations\SearchCompaniesResponse
      */
-	
-    public function search(
+	public function search(
         \structure\Structure\Models\Operations\SearchCompaniesApplicationJSON $request,
     ): \structure\Structure\Models\Operations\SearchCompaniesResponse
     {

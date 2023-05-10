@@ -43,8 +43,7 @@ class User
      * @param \structure\Structure\Models\Operations\LoginApplicationJSON $request
      * @return \structure\Structure\Models\Operations\LoginResponse
      */
-	
-    public function login(
+	public function login(
         \structure\Structure\Models\Operations\LoginApplicationJSON $request,
     ): \structure\Structure\Models\Operations\LoginResponse
     {
@@ -83,8 +82,7 @@ class User
      * 
      * @return \structure\Structure\Models\Operations\MeResponse
      */
-	
-    public function me(
+	public function me(
     ): \structure\Structure\Models\Operations\MeResponse
     {
         $baseUrl = $this->_serverUrl;
