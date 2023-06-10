@@ -36,3 +36,9 @@ try {
     // handle exception
 }
 ```
+
+
+### Response
+
+**[?\structure\Structure\Models\Operations\ListUsersResponse](../../models/operations/ListUsersResponse.md)**
+
